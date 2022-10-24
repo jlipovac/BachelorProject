@@ -1,0 +1,107 @@
+﻿* pwd - prints the absolute path of the directory in which we are positioned
+
+* cd 
+   * cd [path] - enters the directory specified by the absolute or relative path
+   * cd .. - positioning in the parent directory 
+
+* mkdir [dir_name] - creating a new directory
+
+* ls - print directory content
+
+* rm 
+   * rm [dir_name] - deleting the file
+   * rmdir [dir_name] - deleting a directory that is empty
+   * rm -r [dir_name] - deleting a directory that is not empty
+
+* mv
+   * mv [dir_name] [path] - moving a file/directory to a new position
+   * mv [dir_name] [new_dir_name] - file name change
+
+* grep
+   * grep “[query]” [dir_name] - query search in the file, if the query is in the file, the lines containing it are printed
+   * grep -A [n] “[query]” [dir_name] - printing n lines that are in the file after the query
+   * grep -B [n] “[query]” [dir_name] - printing n lines that are in the file before the query
+
+* wc -l [dir_name] - printing the number of lines of the file
+
+* less [dir_name] - print file
+
+* head
+   * head [dir_name] - printing the first 5 lines of the file
+   * head -[n] [dir_name] - printing the first n lines of the file
+
+* tail
+   * tail [dir_name] - printing the last 5 lines of the file
+   * tail -[n] [dir_name] - printing the last n lines of the file
+
+* nano [dir_name] - creating a new file (if it doesn't exist) and editing the file (if it already exists)
+
+* wget [link] - download linked file
+an example of an absolute path: /home/user/Documents/bioinformatics
+an example of a relative path: ./Documents/bioinformatics
+________________
+
+	
+Tasks with fasta file from NCBI database
+
+
+1. print the current path
+pwd
+
+2. download the file from the NCBI database at the position where we are
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/770/115/GCF_000770115.1_ASM77011v2/GCF_000770115.1_ASM77011v2_genomic.fna.gz
+
+3. create directory data
+        mkdir data
+
+4. enter the directory data
+        cd data
+
+5. copy the fasta/fastq file to the newly created directory
+        cp [path to data] [path to data directory]
+or move the fasta/fastq data to the newly created directory
+        mv [path to data] [path to data directory]]
+
+6. print the contents of the directory to check if the copied/moved files are in the directory
+        ls 
+
+7. print the contents of the fasta/fastq file
+        less [name of fasta/fastq file]
+
+8. print the number of lines of the fasta/fastq file
+        wc -l [name of fasta/fastq file]
+
+9. print the first 5 lines of the fasta/fastq file
+        head [name of fasta/fastq file]
+
+10. print the last 3 lines of the fasta/fastq file
+        tail -3 [name of fasta/fastq file]
+
+11. copy the shorter subsequence from the previous printout and print all its occurrences in the fasta/fastq file
+        grep “GAGTTCGGGCCCGTTT” [name of fasta/fastq file]
+
+12. print the number of occurrences of the selected subsequence in the fasta/fastq file
+        grep “GAGTTCGGGCCCGTTT” [name of fasta/fastq file] | wc -l
+
+13. print the occurrences of the selected subsequence to a new text file subsequence.txt
+        grep “GAGTTCGGGCCCGTTT” [name of fasta/fastq file] > subsequence.txt
+
+14. write the number of lines of the newly created text file into the new text file num_of_rows.txt
+        wc -l subsequence.txt > num_of_rows.txt
+
+15. update the file num_of_rows.txt - write in the first line “number of rows”
+        nano num_of_rows.txt
+        - write an expression “number of rows”
+        - ctrl + X to exit and save the file
+
+16. create a directory other
+        mkdir other
+
+17. move the file subsequence.txt in the directory other
+        mv subsequence.txt other
+
+18. delete the file num_of_rows.txt
+        rm num_of_rows.txt
+
+19. delete the directory other
+        rm -r other

@@ -1,0 +1,27 @@
+﻿1. connecting to the server:
+$ ssh sbakic@godot.zesoi.fer.hr
+- it is necessary to enter your password after starting this command (if it has not been changed, then it is based on username123!!!)
+
+2. copying from the server to the local computer:
+$ scp -r sbakic@godot.zesoi.fer.hr:[absolute path to the file on the server] [the path to the destination directory locally]
+
+3. copying from the local computer to the server:
+$ scp -r [the path to the directory/file that we transfer to the server] sbakic@godot.zesoi.fer.hr:[absolute path to the destination directory on the server]
+
+4. opening new screen:
+$ screen -S new-screen
+
+5. list of open screens:
+$ screen -ls
+
+6. connecting to an already open screen:
+$ screen -r [screen_id]
+
+7. exiting the screen:
+Ctrl + a + d
+
+8. deleting the screen:
+$ screen -X -S [screen_id] quit
+
+9. exiting the server:
+exit
