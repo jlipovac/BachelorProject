@@ -1,4 +1,4 @@
-** Intro
+## Intro
 
 In this task, you will get familiar with the problem of mapping a set of reads to a reference.
 
