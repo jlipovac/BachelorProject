@@ -20,9 +20,9 @@ You will receive data (fastq files) containing ONT reads of Vibrio harveyi virus
 
   Example of two lines of output file:
 
-    fdf34b2b-93de-4aa7-a4eb-9d09d9569be8	1	2346	45
-    
-    8e14d498-c647-4434-b5fe-ee055f4fb09e	2	45565, 235676	46.5
+    |fdf34b2b-93de-4aa7-a4eb-9d09d9569be8 | 1 | 2346           | 45   |
+    |-------------------------------------|---|----------------|------|
+    |8e14d498-c647-4434-b5fe-ee055f4fb09e | 2 | 45565, 235676  | 46.5 |
 
 The first column contains the read_id. The second contains the number of occurrences in the .sam file, more precisely the number of mappings of that read. In the third column is the starting mapping position, if there are more than one, they must be separated by a comma. In the fourth, the average quality of mapping. Columns are separated by a tab delimiter.
 
