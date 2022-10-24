@@ -1,4 +1,4 @@
-FAST5 Task
+## FAST5 Task
 
 In this part of the project you should get familiar with another format data, fast5. fast5 is a Nanopore data format that stores information on raw signals obtained through ONT Nanopore sequencing process. A gente introduction to the fast5 format is available [here](https://medium.com/@shiansu/a-look-at-the-nanopore-fast5-format-f711999e2ff6). To understand the format you should complete several tasks.
 
