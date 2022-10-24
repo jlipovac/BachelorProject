@@ -12,6 +12,6 @@ The tasks include:
   
   
 The tasks are expected to be executed in linux environment, probably using remote servers. Files that should be of help for this are:
-  * Linux.txt
-  * Servers.txt
+  * **Linux.txt**
+  * **Servers.txt**
   
