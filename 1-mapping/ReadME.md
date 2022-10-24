@@ -19,7 +19,7 @@ You will receive data (fastq files) containing ONT reads of Vibrio harveyi virus
 * The second task is to write a python script to parse the .sam file. In an output txt file, it is necessary to print for each read_id that is in the .sam file the total number of mappings, the start position/positions of the mapping to the reference and the average quality of the mapping.  Skip the reads that are not mapped ( * in the third column of the sam file).
 
   Example of two lines of output file:
-    | Read ID                             | # mappings | Start          | Avg quality |
+    | Read ID                             | # mappings | Start positions| Avg quality |
     |-------------------------------------|------------|----------------|-------------|
     |fdf34b2b-93de-4aa7-a4eb-9d09d9569be8 | 1          | 2346           | 45          |
     |8e14d498-c647-4434-b5fe-ee055f4fb09e | 2          | 45565, 235676  | 46.5        |
