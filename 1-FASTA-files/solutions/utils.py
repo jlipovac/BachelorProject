@@ -2,9 +2,9 @@ import argparse
 
 def ends_with(filename, extensions):
     for ext in extensions:
-        if not filename.endswith(ext):
-            return False
-    return True
+        if filename.endswith(ext):
+            return True
+    return False
 
 
 def add_reference_and_reads(parser):
@@ -13,9 +13,9 @@ def add_reference_and_reads(parser):
     args = parser.parse_args()
     extensions = ['.fasta', '.fna', '.ffn', '.faa', '.frn', '.fa']
 
-    if ends_with(args.reference, extensions):
+    if not ends_with(args.reference, extensions):
         raise ValueError('File should be in fasta format')
-    if ends_with(args.reads, extensions):
+    if not ends_with(args.reads, extensions):
         raise ValueError('File should be in fasta format')
     return args
 
@@ -24,6 +24,6 @@ def add_reads(parser):
     args = parser.parse_args()
     extensions = ['.fasta', '.fna', '.ffn', '.faa', '.frn', '.fa']
 
-    if ends_with(args.reads, extensions):
+    if not ends_with(args.reads, extensions):
         raise ValueError('File should be in fasta format')
     return args

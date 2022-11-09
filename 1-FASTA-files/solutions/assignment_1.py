@@ -11,9 +11,9 @@ parser.add_argument("output", help="Output file path, can be an inexistent file 
 args = parser.parse_args()
 extensions = ['.fasta', '.fna', '.ffn', '.faa', '.frn', '.fa']
 
-if ends_with(args.input, extensions):
+if not ends_with(args.input, extensions):
     raise ValueError('File should be in fasta format')
-if ends_with(args.output, extensions):
+if not ends_with(args.output, extensions):
     raise ValueError('File should be in fasta format')
 
 sequences = list()
