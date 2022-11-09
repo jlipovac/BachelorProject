@@ -1,17 +1,21 @@
 from Bio import SeqIO
+import argparse
+from utils import add_reference_and_reads
 
-def main():
-    len_reference = 0
-    for record in SeqIO.parse("../chr19_two_mio/reference.fasta", "fasta"):
-        print("Length of the reference sequence: " + str(len(record.seq)))
-        len_reference = len(record.seq)
+parser = argparse.ArgumentParser(
+    prog='Assignment 2',
+    description='Computes the length of the reference sequence, as well as the length of the combined sequence of the reads and the coverage',
+    epilog='some text')
+args = add_reference_and_reads(parser)
 
-    len_combined = 0
-    for record in SeqIO.parse("../chr19_two_mio/reads.fasta", "fasta"):
-        len_combined += len(record.seq)
-    print("Length of the combined sequence of the reads: " + str(len_combined))
+len_reference = 0
+for record in SeqIO.parse(args.reference, "fasta"):
+    print("Length of the reference sequence: " + str(len(record.seq)))
+    len_reference = len(record.seq)
 
-    print("Coverage of the given dataset: " + str(len_combined/len_reference))
+len_combined = 0
+for record in SeqIO.parse(args.reads, "fasta"):
+    len_combined += len(record.seq)
+print("Length of the combined sequence of the reads: " + str(len_combined))
 
-if __name__ == "__main__":
-    main()
+print("Coverage of the given dataset: " + str(len_combined / len_reference))
