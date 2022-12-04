@@ -1,1 +1,1 @@
-
+Number of correctly classified reads is: 13064
